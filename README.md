@@ -1,5 +1,5 @@
 # Qwen3_ASR_generator
-modified [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR) into a faster-whisper liked generator due to reduce the usage of GPU memory.  
+Modified [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR) into a faster-whisper liked generator due to reduce the usage of GPU memory. Made it Qwen3-ASR can run on the 8G Nvidia Graphics Card without run out of memory     
 added transcribe_streaming to return timestamps   
 ```python
 import torch
