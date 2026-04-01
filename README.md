@@ -1,11 +1,11 @@
 # Qwen3_ASR_generator
-modified Qwen3_ASR into a faster-whisper liked generator due to reduce the usage of GPU memory.  
+modified [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR) into a faster-whisper liked generator due to reduce the usage of GPU memory.  
 added transcribe_streaming to return timestamps   
 ```python
 import torch
 from qwen_asr import Qwen3ASRModel
 
-# 初始化模型（必须指定 forced_aligner）
+# initialize model, same as the origin version
 model = Qwen3ASRModel.from_pretrained(
     pretrained_model_name_or_path = model_path,
     dtype=torch.bfloat16,
@@ -21,6 +21,7 @@ model = Qwen3ASRModel.from_pretrained(
     )
 )
 
+# new module to output timestamps
 for chunk in model.transcribe_streaming(
     audio = audio_path,
     language = "Chinese",
